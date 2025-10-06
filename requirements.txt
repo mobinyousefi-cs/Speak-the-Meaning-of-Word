@@ -1,0 +1,4 @@
+PyDictionary>=2.0.1
+pyttsx3>=2.90
+requests>=2.31
+beautifulsoup4>=4.12

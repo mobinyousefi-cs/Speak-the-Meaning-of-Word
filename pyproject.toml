@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "speak-meaning"
+version = "0.1.0"
+description = "A Tkinter app that looks up and speaks the meaning of a word."
+authors = [{ name = "Mobin Yousefi", email = "mobin@example.com" }]
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["dictionary", "tts", "tkinter", "education"]
+dependencies = [
+  "PyDictionary>=2.0.1",
+  "pyttsx3>=2.90",
+  "requests>=2.31",
+  "beautifulsoup4>=4.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/mobinyousefi-cs/speak-meaning"
+
+[project.scripts]
+speak-meaning = "speak_meaning.main:main"
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E203", "E501"]  # handled by Black / long lines sometimes for docstrings
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
